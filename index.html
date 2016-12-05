@@ -9,14 +9,25 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
   <body>
-    <div class="weather">
-      <ul>
-        <li id="city"></li>
-        <li id="description"></li>
-        <li id="temp"></li>
-        <li id="wind"></li>
-      </ul>
+    <div class="header text-center">
+      <h1>Your Local Weather</h1>
     </div>
+    <div class="top text-center container-fluid">
+      <div class="row">
+        <div class="col-xs-6"
+         id="date"></div>
+        <div class="col-xs-6" id="city"></div>
+      </div>
+    </div>
+    <div class="middle text-center">
+      <h1 id="temp"></h1>
+      <h4 id="weatherType"></h4>
+    </div>
+    <div class="bottom text-center">
+      <h4 id="humidity"></h4>
+      <h4 id="windSpeed"></h4>
+    </div>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/scripts.js">
