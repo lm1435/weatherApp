@@ -32,8 +32,10 @@ $(document).ready(function(){
        "Thursday",
        "Friday",
        "Saturday"];
+
       var weekday = weekdays[today.getDay()];
       var day = today.getDate();
+
       var months =
         ['Jan',
         'Feb',
@@ -47,6 +49,7 @@ $(document).ready(function(){
         'Oct',
         'Nov',
         'Dec'];
+
       var month = months[today.getMonth()];
 
       if(day<10) {
@@ -57,7 +60,7 @@ $(document).ready(function(){
 
       $('#temp').html(farenheit).append("&#8457;");
       $('#temp').click(function(){
-        if(tempChange==false) {
+        if(tempChange == false) {
           $('#temp').html(celsius).append("&#8451;");
           tempChange=true;
         } else {
@@ -66,22 +69,24 @@ $(document).ready(function(){
         }
       });
       $('#city').html(city);
-      $('#windSpeed').html(windSpeed + " MPH");
-      $('#weatherType').html(weatherType);
-      $('#humidity').html(humidity + "%");
+      $('#windSpeed').html("Wind: " + windSpeed + " MPH");
+      $('#weatherType').html("Weather: " + weatherType);
+      $('#humidity').html("Humidity: " + humidity);
+
+      $('body').css('padding-bottom', '390px');
 
       if(farenheit>90 || celsius>32){
-        $('body').css('background-image', 'url("http://cdn.phys.org/newman/gfx/news/hires/2013/testingarela.jpg")');
+        $('body').css('background-image', 'url("https://static.pexels.com/photos/128994/pexels-photo-128994.jpeg")').css('background-size', 'cover');
       } else if (farenheit>75 || celsius>24) {
-        $('body').css('background-image', 'url("http://dreamatico.com/data_images/summer/summer-5.jpg")');
+        $('body').css('background-image', 'url("https://static.pexels.com/photos/4952/sky-beach-vacation-summer.jpeg")').css('background-size', 'cover');
       } else if (farenheit>60 || celsius>16){
-        $('body').css('background-image', 'url("https://www.lcfencegate.com/wp-content/uploads/2013/06/texas-sunrise.jpg")');
+        $('body').css('background-image', 'url("https://static.pexels.com/photos/17577/pexels-photo.jpg")').css('background-size', 'cover');
       } else if (farenheit>45 || celsius>7) {
-        $('body').css('background-image','url("http://www.blogto.com/upload/2016/09/2016928-fall.jpg")').css('background-size', 'cover');
+        $('body').css('background-image','url("https://static.pexels.com/photos/158848/pexels-photo-158848.jpeg")').css('background-size', 'cover');
       } else if (farenheit>30 || celsius>-1) {
-        $('body').css('background-image', 'http://cdn2.media.zp-cdn.com/8585/texas-winter-7ebf9e.jpg');
+        $('body').css('background-image', 'https://static.pexels.com/photos/186575/pexels-photo-186575.jpeg').css('background-size', 'cover');
       } else {
-        $('body').css('background-image', 'url("http://media.gettyimages.com/photos/man-ice-fishing-on-long-lake-southcentral-alaska-wintern-picture-id586886759?k=6&m=586886759&s=170667a&w=0&h=17LZLV-o0x_AN1dsF2ry21GINHqTj8U0kssDV8_XCJg=")');
+        $('body').css('background-image', 'url("https://static.pexels.com/photos/128905/pexels-photo-128905.jpeg")').css('background-size', 'cover');
       }
     });
   });
