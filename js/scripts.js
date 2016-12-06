@@ -19,26 +19,43 @@ $(document).ready(function(){
         celsius = kelvin - 273.15;
 
         var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth()+1;
-        var yyyy = today.getFullYear();
+        var weekdays =
+        ["Sunday",
+         "Monday",
+         "Tuesday",
+         "Wednesday",
+         "Thursday",
+         "Friday",
+         "Saturday"];
+        var weekday = weekdays[today.getDay()];
+        var day = today.getDate();
+        var months = ['Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'June',
+        'July',
+        'Aug',
+        'Sept',
+        'Oct',
+        'Nov',
+        'Dec'];
+        var month = months[today.getMonth()];
 
-        if(dd<10) {
-            dd='0'+dd;
+        if(day<10) {
+            day='0'+day;
         }
-        if(mm<10) {
-            mm='0'+mm;
-        }
-        today = mm+' / '+dd+' / '+yyyy;
+        today = weekday + ", " + month +' '+ day;
         $('#date').html(today);
 
-        $('#temp').html(farenheit);
+        $('#temp').html(farenheit).append("&#8457;");
         $('#temp').click(function(){
           if(tempChange==false) {
-            $('#temp').html(celsius "&#8451;");
+            $('#temp').html(celsius).append("&#8451;");
             tempChange=true;
           } else {
-            $('#temp').html(farenheit);
+            $('#temp').html(farenheit).append("&#8457;");
             tempChange=false;
           }
         });
